@@ -51,10 +51,10 @@
 
 			/** Set access tokens here - see: https://dev.twitter.com/apps/ **/
 			$settings = array(
-				'oauth_access_token' => "35442559-oe10vPLAUFfhij2smP5sQOSEaKRokGjpm98T7UmI",
-				'oauth_access_token_secret' => "45EArsvp2HPU6XcF8bGVRUeEsvj7ZHEZejveudeic",
-				'consumer_key' => "ABLNj9jKpnCrcYvxMcMA",
-				'consumer_secret' => "yvWYWDqXsRz9Z1VHIXtQc5ob1ZXFGnPacpzG6GA"
+				'oauth_access_token' => "35442559-baSxrNsjVqtTBwV0QlAXvAIHxnmGyT2kVgzJ5XAji",
+				'oauth_access_token_secret' => "41bmXlNGbtGbxwvbe5nUGqpF9TMi1PE1uE2WThKjAsvrC",
+				'consumer_key' => "WeYJ9DDkhzc3r7nqvAYAz08Dl",
+				'consumer_secret' => "VZoKgzzMpJsSFOL5B1lQyzWmXoUqNICZfw6DhGvVDflzpOvdCc"
 			);
 
 			/**
@@ -93,6 +93,8 @@
 				$jsonResultSet =  $twitter->setGetfield($getfield)->buildOauth($url, $requestMethod)->performRequest();
 
 				$jsonObjectLoop = json_decode($jsonResultSet);
+
+//				var_dump($jsonObjectLoop);
 				$numberOfMembers = count($jsonObjectLoop->users);
 				for($i=0;$i<$numberOfMembers;$i++){
 					$imgUrl = $jsonObjectLoop->users[$i]->profile_image_url;
